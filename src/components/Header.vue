@@ -22,29 +22,37 @@ header
 
 <style lang="sass" scoped>
 .main-nav
-    display: flex
-    align-items: center
-    justify-content: space-between
-    height: 60px
-    padding: 20px 0
-    font-size: 13px
+  display: flex
+  align-items: center
+  justify-content: space-between
+  height: 60px
+  padding: 20px 0
+  font-size: 13px
 
 .logo
-    width: 160px
+  width: 160px
 
 ul
-    display: flex
+  display: flex
 
-    li
-        padding: 0 10px
+  li
+    padding: 0 10px
 
     a
-        padding-bottom: 2px
+      padding-bottom: 2px
 
-        &:hover
-            border-bottom: 2px solid #262626
+      &:hover
+        border-bottom: 2px solid #262626
 
     &.main-menu
-        flex: 1
-        margin-left: 20px
+      flex: 1
+      margin-left: 20px
+
+.menu-btn
+  cursor: pointer
+  position: absolute
+  top: 20px
+  right: 30px
+  z-index: 2
+  display: none
 </style>
