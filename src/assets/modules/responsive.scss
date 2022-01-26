@@ -1,0 +1,105 @@
+@media (max-width: 700px) {
+    .menu-btn {
+      display: block;
+  
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  
+    .main-nav ul {
+      &.right-menu {
+        margin-right: 50px;
+      }
+  
+      &.main-menu {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #f2f2f2;
+        width: 50%;
+        height: 100%;
+        border-right: #ccc 1px solid;
+        opacity: 0.9;
+        transform: translateX(-500px);
+        transition: transform 0.5s ease-in-out;
+  
+        li {
+          padding: 10px;
+          border-bottom: #ccc solid 1px;
+          font-size: 14px;
+  
+          &:last-child {
+            border-bottom: 0;
+          }
+        }
+  
+        &.show {
+          transform: translateX(-20px);
+        }
+      }
+    }
+  
+    .home-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    table {
+      border: 0;
+  
+      caption {
+        font-size: 1.3em;
+      }
+  
+      thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+      }
+  
+      tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: 0.625em;
+      }
+  
+      td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: 0.8em;
+        text-align: right;
+  
+        &::before {
+          /*
+          * aria-label has no advantage, it won't be read inside a table
+          content: attr(aria-label);
+          */
+          content: attr(data-label);
+          float: left;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+  
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+  
+    footer.footer {
+      position: relative;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .coin-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  
