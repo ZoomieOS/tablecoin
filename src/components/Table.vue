@@ -22,8 +22,7 @@ section.coin
         td
           a.btn(href="#") Add To Portfolio
       tr
-        a(href="#")
-          td(data-label="Rank") 2
+        td(data-label="Rank") 2
         td(data-label="Name")
           | Ethereum
           sup ETH
