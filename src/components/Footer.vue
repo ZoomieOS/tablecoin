@@ -11,7 +11,7 @@ footer.footer
         i.fa-brands.fa-github-square
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .author {
   display: flex;
   align-items: center;

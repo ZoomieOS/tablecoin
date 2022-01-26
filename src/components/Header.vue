@@ -20,7 +20,7 @@ header
             | (1,80%)
 </template>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .main-nav
   display: flex
   align-items: center

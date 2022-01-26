@@ -73,7 +73,7 @@ section.coin
 </template>
 
 
-<style lang="sass" scoped>
+<style lang="sass">
 table
     border: 1px solid #ccc
     border-collapse: collapse
@@ -115,7 +115,7 @@ th
     font-size: 0.85em
     letter-spacing: 0.1em
     text-transform: uppercase
-    
+
 .coin
     margin: 20px 0
 
