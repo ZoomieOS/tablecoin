@@ -1,0 +1,29 @@
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+  }
+  
+  .btn {
+      cursor: pointer;
+      display: inline-block;
+      border: 0;
+      font-weight: bold;
+      padding: 10px 20px;
+      background: #262626;
+      color: #fff;
+      font-size: 15px;
+    
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+    
+    .dark {
+      color: #fff;
+    
+      .btn {
+        background: #f4f4f4;
+        color: #333;
+      }
+    }

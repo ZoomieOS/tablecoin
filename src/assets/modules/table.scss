@@ -1,0 +1,58 @@
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+  box-shadow: rgb(0 0 0 / 40%) 0px 2px 15px -3px;
+  border-radius: 10px;
+
+  caption {
+    font-size: 1.5em;
+    margin: 0.5em 0 0.75em;
+  }
+
+  tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 0.35em;
+  }
+
+  th,
+  td {
+    padding: 0.625em;
+    text-align: center;
+
+    span.decrease {
+      color: rgb(244, 67, 54);
+    }
+
+    span.increase {
+      color: rgb(24, 198, 131);
+    }
+
+    &:last-child {
+      text-align: center;
+    }
+
+    sup {
+      font-size: 10px;
+      color: #616161;
+    }
+  }
+
+  th {
+    font-size: 0.85em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+}
+
+.coin {
+  margin: 20px 0;
+
+  .pagination {
+    margin: 20px 0;
+  }
+}
