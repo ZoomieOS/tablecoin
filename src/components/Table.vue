@@ -20,7 +20,7 @@ section.coin
         td(data-label="Change(24Hr)")
           span.increase 1.24%
         td
-          a.btn(href="#") Add To Portfolio
+          a.btn(href="#" @click="showModal") Add To Portfolio
       tr
         td(data-label="Rank") 2
         td(data-label="Name")
@@ -64,60 +64,84 @@ section.coin
   .pagination
     a.btn(href="#")
       i.fas.fa-chevron-left
-      |
-      | Prev
+      |  Prev
     a.btn(href="#")
       | Next
       i.fas.fa-chevron-right
+  modal(v-show="isModalVisible" @close="closeModal")
+    h2(slot="header") Add Coin to Portfolio
+    template(slot="body")
+      label(for="qty") Enter quantity:
+      input(name="qty" type="text" placeholder="Enter quantity")
 </template>
 
+<script>
+import Modal from "../components/Modal.vue";
 
+export default {
+  name: "Table",
+  components: { Modal },
+  data() {
+    return {
+      isModalVisible: false,
+    };
+  },
+  methods: {
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    },
+  },
+};
+</script>
 <style lang="sass">
 table
-    border: 1px solid #ccc
-    border-collapse: collapse
-    margin: 0
-    padding: 0
-    width: 100%
-    table-layout: fixed
-    box-shadow: rgb(0 0 0 / 40%) 0px 2px 15px -3px
-    border-radius: 10px
+  border: 1px solid #ccc
+  border-collapse: collapse
+  margin: 0
+  padding: 0
+  width: 100%
+  table-layout: fixed
+  box-shadow: rgb(0 0 0 / 40%) 0px 2px 15px -3px
+  border-radius: 10px
 
 caption
-    font-size: 1.5em
-    margin: 0.5em 0 0.75em
+  font-size: 1.5em
+  margin: 0.5em 0 0.75em
 
 tr
-    background-color: #f8f8f8
-    border: 1px solid #ddd
-    padding: 0.35em
+  background-color: #f8f8f8
+  border: 1px solid #ddd
+  padding: 0.35em
 
 th,
 td
-    padding: 0.625em
-    text-align: center
+  padding: 0.625em
+  text-align: center
 
-    span.decrease
-        color: rgb(244, 67, 54)
+  span.decrease
+    color: rgb(244, 67, 54)
 
     span.increase
-        color: rgb(24, 198, 131)
+      color: rgb(24, 198, 131)
 
     &:last-child
-        text-align: center
+      text-align: center
 
     sup
-        font-size: 10px
-        color: #616161
+      font-size: 10px
+      color: #616161
 
 th
-    font-size: 0.85em
-    letter-spacing: 0.1em
-    text-transform: uppercase
+  font-size: 0.85em
+  letter-spacing: 0.1em
+  text-transform: uppercase
 
 .coin
-    margin: 20px 0
+  margin: 20px 0
 
 .pagination
-    margin: 20px 0
+  margin: 20px 0
 </style>
