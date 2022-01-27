@@ -12,7 +12,7 @@ const routes = [
     component: Main,
   },
   {
-    path: "/coin/:namme",
+    path: "/coin/:name",
     name: "Coin",
     component: Coin,
     props: true,
