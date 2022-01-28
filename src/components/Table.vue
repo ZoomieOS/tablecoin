@@ -28,7 +28,7 @@ section.coin
     h2(slot="header") Add Coin to Portfolio
     template(slot="body")
       label(for="qty") Enter quantity:
-      input(name="qty" v-model="qty" type="text" placeholder="Enter quantity")
+      input(name="qty" type="text" placeholder="Enter quantity")
     template(slot="footer")
       button.btn Add
 </template>
@@ -47,9 +47,6 @@ export default {
       isModalVisible: false,
       currentPage: 1,
       pageSize: 10,
-      qty: 0,
-      currentAddItem: "",
-      priceAddItem: 0,
     };
   },
   computed: {
@@ -62,11 +59,8 @@ export default {
     },
   },
   methods: {
-    showModal(item1, item2) {
+    showModal() {
       this.isModalVisible = true;
-
-      this.priceAddItem = item1;
-      this.currentAddItem = item2;
     },
     closeModal() {
       this.isModalVisible = false;
