@@ -22,11 +22,11 @@ export default {
       if (tempNumber > 1000) {
         const pointIndex = number.indexOf(".");
         const millions = Number(number.slice(0, pointIndex + 4));
-        return `${millions.toFixed(3)}`;
+        return `${millions.toFixed(2)}`;
       }
 
       if (tempNumber > 1) {
-        return tempNumber.toFixed(3);
+        return tempNumber.toFixed(2);
       }
 
       if(tempNumber < 0) {
