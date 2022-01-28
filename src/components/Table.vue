@@ -1,8 +1,6 @@
 <template lang="pug">
 section.coin
   table
-    caption
-      | Coin Table
     thead
       tr
         th(v-for="(textHeader, index) in tableHeaderText" scope="col" :key="textHeader + '_' + index")
@@ -16,9 +14,9 @@ section.coin
           sup {{ item.symbol }}
         td(data-label="Price") {{ "$" + optimizeNumber(item.priceUsd) }}
         td(data-label="Change(24Hr)")
-          span(:class="[item.changePercent24Hr < 0 ? 'decrease' : 'increase']") {{ optimizeNumber(item.changePercent24Hr) + "%" }}
+          span(:class="[item.changePercent24Hr > 0 ? 'decrease' : 'increase']") {{ optimizeNumber(item.changePercent24Hr) + "%" }}
         td
-          a.btn(href="#" @click="showModal") Add To Portfolio
+          a.btn(href="#" @click="showModal(item.priceUsd, item.name)") Add To Portfolio
   .pagination
     a.btn(href="#" @click="prevPage")
       i.fas.fa-chevron-left
@@ -30,7 +28,9 @@ section.coin
     h2(slot="header") Add Coin to Portfolio
     template(slot="body")
       label(for="qty") Enter quantity:
-      input(name="qty" type="text" placeholder="Enter quantity")
+      input(name="qty" v-model="qty" type="text" placeholder="Enter quantity")
+    template(slot="footer")
+      button.btn(@click="addToPortfolio(qty)") Add
 </template>
 
 <script>
@@ -47,10 +47,10 @@ export default {
       isModalVisible: false,
       currentPage: 1,
       pageSize: 10,
+      qty: 0,
+      currentAddItem: '',
+      priceAddItem: 0,
     };
-  },
-  created() {
-    this.$store.dispatch("getCoins");
   },
   computed: {
     pagination() {
@@ -62,8 +62,15 @@ export default {
     },
   },
   methods: {
-    showModal() {
+    addToPortfolio(qty) {
+      let result;
+      result = qty * Number(this.priceAddItem).toFixed(2)
+    },
+    showModal(item1, item2) {
       this.isModalVisible = true;
+
+      this.priceAddItem = item1;
+      this.currentAddItem = item2;
     },
     closeModal() {
       this.isModalVisible = false;
