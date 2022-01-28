@@ -27,10 +27,10 @@ footer.footer
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  // position: absolute;
+  // bottom: 0;
+  // left: 0;
+  // right: 0;
   background: #f2f2f2;
   color: #616161;
   font-size: 12px;
