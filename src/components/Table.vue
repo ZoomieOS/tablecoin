@@ -14,7 +14,7 @@ section.coin
           sup {{ item.symbol }}
         td(data-label="Price") {{ "$" + optimizeNumber(item.priceUsd) }}
         td(data-label="Change(24Hr)")
-          span(:class="[item.changePercent24Hr > 0 ? 'decrease' : 'increase']") {{ optimizeNumber(item.changePercent24Hr) + "%" }}
+          span(:class="[item.changePercent24Hr < 0 ? 'decrease' : 'increase']") {{ optimizeNumber(item.changePercent24Hr) + "%" }}
         td
           a.btn(href="#" @click="showModal(item.priceUsd, item.name)") Add To Portfolio
   .pagination
@@ -30,7 +30,7 @@ section.coin
       label(for="qty") Enter quantity:
       input(name="qty" v-model="qty" type="text" placeholder="Enter quantity")
     template(slot="footer")
-      button.btn(@click="addToPortfolio(qty)") Add
+      button.btn Add
 </template>
 
 <script>
@@ -48,7 +48,7 @@ export default {
       currentPage: 1,
       pageSize: 10,
       qty: 0,
-      currentAddItem: '',
+      currentAddItem: "",
       priceAddItem: 0,
     };
   },
@@ -62,10 +62,6 @@ export default {
     },
   },
   methods: {
-    addToPortfolio(qty) {
-      let result;
-      result = qty * Number(this.priceAddItem).toFixed(2)
-    },
     showModal(item1, item2) {
       this.isModalVisible = true;
 
