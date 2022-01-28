@@ -1,0 +1,32 @@
+.coin-info {
+
+    h1 {
+      font-size: 30px;
+      margin: 20px 0;
+    }
+  
+    h2 {
+      font-size: 25px;
+    }
+  
+    .coin-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+      margin-bottom: 40px;
+  
+      h3 {
+        margin-bottom: 5px;
+      }
+  
+      div {
+        background: #f2f2f2;
+        padding: 20px;
+        border-radius: 10px;
+      }
+  
+      span {
+        font-weight: 500;
+      }
+    }
+  }
